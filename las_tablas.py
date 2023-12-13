@@ -20,6 +20,9 @@ from BAC0.core.devices.local.models import (
     binary_input,
 )
 
+
+
+
 # Parse command line arguments
 parser = ArgumentParser(formatter_class=ArgumentDefaultsHelpFormatter)
 parser.add_argument("-a", "--address", default=None, help="IPV4 address of device interface with network mask, "
@@ -41,13 +44,32 @@ device = lite(ip=args["address"], port=args["port"], deviceId=args["deviceId"])
 
 
 # Define device objects
-_new_objects = analog_input(
-    instance=526,
-    name="RoomOneTemperature",
-    properties={"units": "degreesCelsius"},
-    description="Room 1 Temperature",
-    presentValue=18.0,
+_new_objects = binary_output(
+    instance=58,
+    name="Lamp1",
+    description="Luces Exterior 1",
+    presentValue=True,
 )
+binary_output(
+    instance=59,
+    name="Lamp2",
+    description="Luces Exterior 2",
+    presentValue=True,
+)
+binary_output(
+    instance=57,
+    name="Lamp3",
+    description="Luces Exterior 3",
+    presentValue=True,
+)
+binary_output(
+    instance=73,
+    name="Lamp4",
+    description="Luces Exterior 4",
+    presentValue=True,
+)
+
+
 _new_objects = analog_input(
     instance=782,
     name="RoomOneTemperature",
