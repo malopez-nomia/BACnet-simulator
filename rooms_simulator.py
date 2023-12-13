@@ -36,15 +36,15 @@ if args["address"] is None:
     parser.print_help()
     exit(0)
 
-# Define device
+# Definicion de Dispositivos
 device = lite(ip=args["address"], port=args["port"], deviceId=args["deviceId"])
 
-# Define device objects
+# Definicion de Puntops
 _new_objects = analog_input(
     instance=10,
-    name="RoomOneTemperature",
+    name="Temperatura",
     properties={"units": "degreesCelsius"},
-    description="Room 1 Temperature",
+    description="Temperatura",
     presentValue=18.0,
 )
 analog_input(
